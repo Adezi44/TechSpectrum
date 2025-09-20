@@ -1,0 +1,379 @@
+/* Base Styles */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin: 0;
+    padding: 20px;
+    color: white;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 30px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+    to { text-shadow: 2px 2px 20px rgba(255,215,0,0.7); }
+}
+
+/* Section Styles */
+.section {
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 30px 0;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+h2 {
+    color: #FFD700;
+    font-size: 2.2em;
+    text-align: center;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.block-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+/* Scratch Block Styles */
+.scratch-block {
+    background: #4C97FF;
+    border-radius: 10px;
+    padding: 15px 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    position: relative;
+    min-width: 200px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Block Color Categories */
+.scratch-block.looks { 
+    background: #9966FF; 
+}
+
+.scratch-block.sound { 
+    background: #CF63CF; 
+}
+
+.scratch-block.control { 
+    background: #FFAB19; 
+}
+
+.scratch-block.operators { 
+    background: #40BF4A; 
+}
+
+.scratch-block.variables { 
+    background: #FF8C1A; 
+}
+
+.scratch-block.sensing { 
+    background: #5CB1D6; 
+}
+
+/* Interactive Block Effects */
+.interactive-block:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+.interactive-block:active {
+    transform: scale(0.95);
+}
+
+.interactive-block.clicked {
+    animation: pulse 0.6s ease;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Block Connection Points */
+.scratch-block::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background: inherit;
+    border-radius: 8px;
+}
+
+.scratch-block::after {
+    content: '';
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background: inherit;
+    border-radius: 8px;
+    clip-path: polygon(0 0, 50% 50%, 0 100%);
+}
+
+/* Block Stacking */
+.block-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+/* Nested Block Indentation */
+.nested-block {
+    margin-left: 20px;
+    opacity: 0.9;
+}
+
+.nested-block-2 {
+    margin-left: 40px;
+    opacity: 0.8;
+}
+
+.nested-block-3 {
+    margin-left: 60px;
+    opacity: 0.7;
+}
+
+/* Input Fields and Dropdowns */
+.example-title {
+    background: rgba(255,255,255,0.2);
+    padding: 10px 20px;
+    border-radius: 15px;
+    margin: 15px 0;
+    font-size: 18px;
+    text-align: center;
+    animation: fadeInUp 0.6s ease;
+}
+
+.input-field {
+    background: white;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 0 5px;
+    font-weight: normal;
+    transition: background-color 0.3s ease;
+}
+
+.input-field:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown {
+    background: white;
+    color: black;
+    padding: 3px 8px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    font-weight: normal;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown:hover {
+    background-color: #e0e0ff;
+}
+
+/* Footer and Demo Button */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1.5em;
+}
+
+.demo-btn {
+    background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.demo-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+.demo-btn:active {
+    transform: translateY(0);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background-color: white;
+    color: black;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+    text-align: center;
+    animation: slideIn 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #000;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Demo Animations */
+.demo-active {
+    animation: rainbow 2s linear infinite;
+}
+
+@keyframes rainbow {
+    0% { background-color: #FF6B6B; }
+    16.66% { background-color: #FFE66D; }
+    33.33% { background-color: #4ECDC4; }
+    50% { background-color: #45B7D1; }
+    66.66% { background-color: #9B59B6; }
+    83.33% { background-color: #FF8A80; }
+    100% { background-color: #FF6B6B; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 { 
+        font-size: 2em; 
+    }
+    
+    h2 { 
+        font-size: 1.8em; 
+    }
+    
+    .scratch-block { 
+        min-width: 150px; 
+        font-size: 14px;
+        padding: 12px 15px;
+    }
+    
+    .section {
+        padding: 20px;
+        margin: 20px 0;
+    }
+    
+    .block-container {
+        gap: 15px;
+    }
+    
+    .nested-block {
+        margin-left: 15px;
+    }
+    
+    .nested-block-2 {
+        margin-left: 30px;
+    }
+    
+    .nested-block-3 {
+        margin-left: 45px;
+    }
+    
+    .footer {
+        font-size: 1.2em;
+    }
+    
+    .demo-btn {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .scratch-block {
+        min-width: 120px;
+        font-size: 12px;
+        padding: 10px 12px;
+    }
+    
+    .input-field {
+        padding: 3px 6px;
+        font-size: 12px;
+    }
+    
+    .dropdown {
+        padding: 2px 5px;
+        font-size: 12px;
+    }
+}

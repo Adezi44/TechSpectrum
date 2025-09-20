@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scratch Programming Blocks</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Scratch Programming Blocks</h1>
+        
+        <div class="section">
+            <h2>📢 1. Printing Statements (Say & Think)</h2>
+            <div class="example-title">Making your sprite talk!</div>
+            <div class="block-container">
+                <div class="block-stack">
+                    <div class="scratch-block looks interactive-block" data-sound="pop">say <span class="input-field">Hello World!</span> for <span class="input-field">2</span> seconds</div>
+                    <div class="scratch-block looks interactive-block" data-sound="meow">say <span class="input-field">I love coding!</span></div>
+                    <div class="scratch-block looks interactive-block" data-sound="think">think <span class="input-field">Hmm...</span> for <span class="input-field">3</span> seconds</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🧮 2. Operations (Math & Logic)</h2>
+            <div class="example-title">Let's do some math!</div>
+            <div class="block-container">
+                <div class="block-stack">
+                    <div class="scratch-block operators interactive-block" data-result="15"><span class="input-field">10</span> + <span class="input-field">5</span></div>
+                    <div class="scratch-block operators interactive-block" data-result="12"><span class="input-field">20</span> - <span class="input-field">8</span></div>
+                    <div class="scratch-block operators interactive-block" data-result="21"><span class="input-field">7</span> × <span class="input-field">3</span></div>
+                    <div class="scratch-block operators interactive-block" data-result="5"><span class="input-field">15</span> ÷ <span class="input-field">3</span></div>
+                </div>
+                <div class="block-stack">
+                    <div class="scratch-block operators interactive-block" data-result="true"><span class="input-field">5</span> > <span class="input-field">3</span></div>
+                    <div class="scratch-block operators interactive-block" data-result="true"><span class="input-field">apple</span> = <span class="input-field">apple</span></div>
+                    <div class="scratch-block operators interactive-block" data-result="Hello World">join <span class="input-field">Hello </span> <span class="input-field">World</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🔁 3. Loops (Repeat Actions)</h2>
+            <div class="example-title">Make things happen over and over!</div>
+            <div class="block-container">
+                <div class="block-stack">
+                    <div class="scratch-block control interactive-block" data-demo="repeat">repeat <span class="input-field">10</span></div>
+                    <div class="scratch-block looks nested-block">move <span class="input-field">10</span> steps</div>
+                </div>
+                <div class="block-stack">
+                    <div class="scratch-block control interactive-block" data-demo="forever">forever</div>
+                    <div class="scratch-block looks nested-block">change color effect by <span class="input-field">25</span></div>
+                </div>
+                <div class="block-stack">
+                    <div class="scratch-block control interactive-block" data-demo="until">repeat until <span class="dropdown">touching edge?</span></div>
+                    <div class="scratch-block looks nested-block">move <span class="input-field">5</span> steps</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🤔 4. Conditional Statements (If-Then)</h2>
+            <div class="example-title">Making smart decisions!</div>
+            <div class="block-container">
+                <div class="block-stack">
+                    <div class="scratch-block control interactive-block" data-demo="if-space">if <span class="dropdown">key space pressed?</span> then</div>
+                    <div class="scratch-block looks nested-block">say <span class="input-field">Space pressed!</span></div>
+                </div>
+                <div class="block-stack">
+                    <div class="scratch-block control interactive-block" data-demo="if-else">if <span class="dropdown">touching mouse-pointer?</span> then</div>
+                    <div class="scratch-block looks nested-block">change size by <span class="input-field">10</span></div>
+                    <div class="scratch-block control">else</div>
+                    <div class="scratch-block looks nested-block">change size by <span class="input-field">-5</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎮 Fun Example: Simple Game Logic</h2>
+            <div class="example-title">Putting it all together!</div>
+            <div class="block-container">
+                <div class="block-stack">
+                    <div class="scratch-block control interactive-block" data-demo="game">when 🏳️ clicked</div>
+                    <div class="scratch-block variables nested-block">set <span class="dropdown">score</span> to <span class="input-field">0</span></div>
+                    <div class="scratch-block control nested-block">forever</div>
+                    <div class="scratch-block control nested-block-2">if <span class="dropdown">touching Sprite2?</span> then</div>
+                    <div class="scratch-block variables nested-block-3">change <span class="dropdown">score</span> by <span class="input-field">1</span></div>
+                    <div class="scratch-block looks nested-block-3">say <span class="input-field">Point scored!</span></div>
+                    <div class="scratch-block sound nested-block-3">play sound <span class="dropdown">pop</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>🌟 Now you know the building blocks of programming! 🌟</p>
+            <p>Mix and match these blocks to create amazing projects!</p>
+            <button id="demo-button" class="demo-btn">🎬 Start Interactive Demo</button>
+        </div>
+    </div>
+
+    <!-- Result Display Modal -->
+    <div id="result-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Result:</h3>
+            <p id="result-text"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
